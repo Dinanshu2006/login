@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <input type="text" placeholder="Username/E-mail" id="username">
+        <input type="password" placeholder="Password" id="password">
+        <button id="btn" onclick="get()">Login</button>
+    </div>
+
+
+    
+    <div id="popup">
+        <h1 id="para">Hello ,This is Trial Based Project Don't Take Serious</h1>
+        <img src="\loginpage\GettyImages-78777891-scaled.jpg" alt="" width="200px" style="position: absolute; margin-left: 45px;">
+        <button id="btn" style="position: absolute; bottom: 50px;" onclick="wclose2()">Close</button>
+
+    </div>
+
+
+    <div id="invalid">
+        <p id="para">Enter Valid Username And Password</p>
+        <button id="btn" style="position: absolute; bottom: 50px;" onclick="wclose1()">Close</button>
+    </div>
+
+    <!-- JavaScript Code -->
+    <script>
+        function get() {
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+            const vaildUsername=["Dinanshu","Aamir","Hemant","Kartikeya"]
+            if (vaildUsername.includes(username) && password=="12345678")
+                {
+                document.getElementById("popup").style.display = "block";
+            }
+            else {
+                document.getElementById("invalid").style.display = "block";
+
+            }
+        }
+
+
+        function wclose1() {
+            document.getElementById("invalid").style.display = "none";
+        }
+
+        function wclose2() {
+            document.getElementById("popup").style.display = "none";
+        }
+    </script>
+</body>
+
+</html>
